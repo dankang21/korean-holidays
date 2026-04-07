@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling<1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "korean-holidays"
+version = "0.3.0"
+description = "Korean public holidays calculator — lunar calendar auto-conversion, substitute holidays"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+    { name = "Daniel Kang", email = "dankang21@gmail.com" },
+]
+keywords = [
+    "korea", "holidays", "public-holidays", "lunar-calendar",
+    "trading-days", "kospi", "stock-market",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+]
+dependencies = [
+    "korean-lunar-calendar>=0.3.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/dankang21/korean-holidays"
+Repository = "https://github.com/dankang21/korean-holidays"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[tool.hatch.build.targets.sdist]
+include = ["korean_holidays/", "LICENSE", "README.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
